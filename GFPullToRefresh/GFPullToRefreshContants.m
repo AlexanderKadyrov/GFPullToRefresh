@@ -17,9 +17,9 @@ const NSTimeInterval GFPTR_INSET_DURATION = 0.4;
 NSString *const GFPTR_KVO_CONTENTFOFFSET = @"contentOffset";
 NSString *const GFPTR_NSUD_LASTUPDATETIME = @"lastUpdateTime";
 
-NSString *const GFPTR_TEXT_PULLDOWNTOREFRESH = @"下拉可以刷新";
-NSString *const GFPTR_TEXT_PULLUPTOREFRESH = @"上拉可以刷新";
-NSString *const GFPTR_TEXT_RELEASTTOREFRESH = @"松开立即刷新";
-NSString *const GFPTR_TEXT_REFRESHING = @"正在刷新...";
+NSString *const GFPTR_TEXT_PULLDOWNTOREFRESH = @"Pull down to refresh";
+NSString *const GFPTR_TEXT_PULLUPTOREFRESH = @"Pull up to refresh";
+NSString *const GFPTR_TEXT_RELEASTTOREFRESH = @"Releast to refresh";
+NSString *const GFPTR_TEXT_REFRESHING = @"Refreshing...";
 
 
