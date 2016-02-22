@@ -107,7 +107,7 @@
             if (scrollViewContentOffsetY >= (- _superViewContentInset.top - 10)) {
                 [self lastUpdateTimeToString];
                 if (_lastUpdateTime) {
-                    _lastUpdateLabel.text = [NSString stringWithFormat:@"最后更新： %@",_lastUpdateTime];
+                    _lastUpdateLabel.text = [NSString stringWithFormat:@"%@", _lastUpdateTime];
                 }
             }
             
@@ -301,7 +301,7 @@
         // 格式化后的最后更新时间
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         
-        [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+        [dateFormatter setDateFormat:@"dd.MM.yyyy HH:mm"];
         
         _lastUpdateTime = [dateFormatter stringFromDate:lastTime];
     }
