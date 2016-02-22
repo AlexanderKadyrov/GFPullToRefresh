@@ -58,7 +58,7 @@
     // 首次进入时取出上一次持久化的最后更新时间
     [self lastUpdateTimeToString];
     if (_lastUpdateTime) {
-        _lastUpdateLabel.text = [NSString stringWithFormat:@"最后更新： %@",_lastUpdateTime];
+        _lastUpdateLabel.text = [NSString stringWithFormat:@"%@", _lastUpdateTime];
     }
     
     
@@ -300,23 +300,10 @@
         
         // 格式化后的最后更新时间
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        if (currentComponents.minute - lastComponents.minute >= 0 && currentComponents.minute - lastComponents.minute < 2) {
-            [dateFormatter setDateFormat:@"刚刚"];
-            _lastUpdateTime = [dateFormatter stringFromDate:lastTime];
-        }
-        else if (lastComponents.day == currentComponents.day) {
-            [dateFormatter setDateFormat:@"今天 HH:mm"];
-            _lastUpdateTime = [dateFormatter stringFromDate:lastTime];
-        } else if (lastComponents.day == currentComponents.day - 1) {
-            [dateFormatter setDateFormat:@"昨天 HH:mm"];
-            _lastUpdateTime = [dateFormatter stringFromDate:lastTime];
-        } else if (lastComponents.day == currentComponents.day - 2) {
-            [dateFormatter setDateFormat:@"前天 HH:mm"];
-            _lastUpdateTime = [dateFormatter stringFromDate:lastTime];
-        } else {
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-            _lastUpdateTime = [dateFormatter stringFromDate:lastTime];
-        }
+        
+        [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+        
+        _lastUpdateTime = [dateFormatter stringFromDate:lastTime];
     }
     
 }
